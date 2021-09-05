@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+
+  wordpress:
+    depends_on:
+      - db
+    restart: always
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+    env_file:
+      - ./secrets.env
+    volumes: 
+      - ./themes/:/var/www/html/wp-content/themes/
+      - ./backup/:/var/www/html/wp-content/updraft/
+      - ./Search-Replace-DB-master/:/var/www/html/temporary/Search-Replace-DB-master/
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+    env_file:
+      - ./secrets.env
+
+volumes:
+  db_data: {}
