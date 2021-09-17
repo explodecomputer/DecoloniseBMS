@@ -33,7 +33,7 @@ get_header(); ?>
                 endif;
                 ?>
                 <header class="entry-header">
-                    <h3 class="entry-title"><?php the_title(); ?></h3>
+                    <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 </header>
                 <div class="entry-content">
                     <?php the_excerpt(); ?>

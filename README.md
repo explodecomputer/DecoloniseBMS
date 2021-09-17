@@ -10,6 +10,7 @@ Many thanks to the contributors of open source software that is used here:
 * [Noto-simple wordpress theme](https://en-gb.wordpress.org/themes/noto-simple/)
 * [Wordpress docker hub](https://hub.docker.com/_/wordpress)
 * [Updraftplus wordpress plugin](https://updraftplus.com/)
+* [Category-specific archive lists](https://artisansweb.net/display-posts-specific-category-wordpress-page/)
 
 ## Secrets
 
