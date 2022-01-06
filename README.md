@@ -37,32 +37,11 @@ cd DecoloniseBMS
 docker-compose up -d
 ```
 
-This should build the images and make available a new wordpress install accessible at [http://localhost:8080]
+This should build the images and make available a new wordpress install accessible at [http://localhost:9080]
 
-Setting up for local or deployed instance
+1. Navigate to http://localhost:9080/wp-admin. Setup as usual
+2. Install the WPVivid plugin
+3. Upload the backup file (e.g. `46.101.75.192_wpvivid-618f7f6db614a_2021-11-13-09-03_backup_all.zip`)
+4. Restore
 
-0. From the deployed site we need to download the data / content files. Go to the main site `wp-admin` and use the updraftplus plugin to download the following components:
-    - db
-    - uploads
-    - plugins
-    - other
-1. Make sure that the backup files are in the `backup` folder. They look like this:
-    - `backup_2021-09-05-0802_DecolBMS_b3b551fb4bfe-db.gz`
-    - `backup_2021-09-05-0802_DecolBMS_b3b551fb4bfe-others.zip`
-    - `backup_2021-09-05-0802_DecolBMS_b3b551fb4bfe-plugins.zip`
-    - `backup_2021-09-05-0802_DecolBMS_b3b551fb4bfe-uploads.zip`
-2. Note that the backup db file has hard-coded URLs in it. So we need to update them using
-    ```
-    ./migrate.sh <hostURL> localhost:8080
-    ```
-3. Navigate to http://localhost:8080/wp-admin/
-4. Install updraftplus plugin
-5. Activate updraftplus plugin
-6. Upload backup files
-    - db
-    - uploads
-    - plugins
-    - other
-7. Restore from these files.
-8. May need to change the theme to noto-simple
-
+Same process for the deployed site.
